@@ -8,6 +8,10 @@
 	"files": [
 		"dist"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rostun/cats-are-love-cats-are-life.git"
+	},
 	"scripts": {
 		"build": "tsc",
 		"start": "node dist/index.js",
