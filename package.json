@@ -7,7 +7,9 @@
 	"packageManager": "yarn@4.9.2",
 	"scripts": {
 		"build": "tsc",
-		"start": "node dist/index.js"
+		"start": "node dist/index.js",
+		"dev": "yarn build && yarn start",
+		"test": "yarn build && node dist/test.js"
 	},
 	"devDependencies": {
 		"typescript": "^5.9.3"
