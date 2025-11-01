@@ -1,17 +1,31 @@
 {
 	"name": "cats-are-love-cats-are-life",
 	"version": "1.0.0",
+	"description": "A growing collection of cat-themed utilities for developers 😸 NYAN",
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
-	"packageManager": "yarn@4.9.2",
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "tsc",
 		"start": "node dist/index.js",
 		"dev": "yarn build && yarn start",
-		"test": "yarn build && node dist/test.js"
+		"test:purr": "yarn build && node dist/log/purr.test.js",
+		"test:all": "yarn build && node dist/**/**/*.test.js"
 	},
+	"keywords": [
+		"cat",
+		"fun",
+		"npm",
+		"utilities",
+		"console",
+		"meow"
+	],
+	"author": "Rosa Tung",
+	"license": "MIT",
 	"devDependencies": {
-		"typescript": "^5.9.3"
+		"typescript": "^5.6.3"
 	}
 }
