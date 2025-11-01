@@ -1,4 +1,7 @@
 {
   "name": "cats-are-love-cats-are-life",
-  "packageManager": "yarn@4.9.2"
+  "packageManager": "yarn@4.9.2",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
 }
