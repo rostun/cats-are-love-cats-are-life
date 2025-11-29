@@ -6,3 +6,8 @@ cats cats CATS
 
 yarn build
 yarn start
+
+## running playground
+
+yarn dlx serve .
+navigate to http://localhost:3000/playground.html
