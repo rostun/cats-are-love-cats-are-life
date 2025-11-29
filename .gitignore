@@ -21,5 +21,7 @@ node_modules
 
 dist
 *.tgz
-package
 .DS_Store
+
+/package/
+!package.json
