@@ -47,12 +47,16 @@ describe('kittyPop', () => {
 	});
 
 	it('uses parabola animation and still removes the element', () => {
+		// Mock RAF to instantly invoke callbacks
+		jest.spyOn(window, 'requestAnimationFrame').mockImplementation((cb) => {
+			return setTimeout(() => cb(performance.now()), 0) as unknown as number;
+		});
+
 		kittyPop(fakeEvent, { animation: 'parabola', durationMs: 700 });
 
 		expect(document.body.querySelector('div')).not.toBeNull();
 
-		// fast-forward timers longer than duration
-		jest.advanceTimersByTime(700);
+		jest.advanceTimersByTime(750); // slightly longer
 
 		expect(document.body.querySelector('div')).toBeNull();
 	});
