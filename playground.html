@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Kitty Cursor Test</title>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-family: sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Click anywhere 😼</h1>
+
+		<script type="module">
+			import { enableKittyCursor } from './dist/cursor/kitty.js';
+
+			enableKittyCursor({
+				animation: 'parabola',
+			});
+		</script>
+	</body>
+</html>
