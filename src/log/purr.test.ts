@@ -1,9 +1,33 @@
-import { purrLog } from "./purr.js";
+import { purrLog, PurrMood } from "./purr";
 
-console.log("🐾 Running purrLog tests...");
-purrLog("happy cat!", { mood: "happy" });
-purrLog("grumpy cat!", { mood: "grumpy" });
-purrLog("sleepy cat!", { mood: "sleepy" });
-purrLog("chaotic cat!", { mood: "chaotic" });
-purrLog("default mood cat!"); // no mood provided
-console.log("✅ All purrLog calls executed.");
+describe("purrLog", () => {
+  let spy: jest.SpyInstance;
+
+  beforeEach(() => {
+    spy = jest.spyOn(console, "log").mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    spy.mockRestore();
+  });
+
+  it("logs with the default 'happy' mood when no options are provided", () => {
+    purrLog("Hello!");
+    expect(spy).toHaveBeenCalledWith("😺 Hello!");
+  });
+
+  const moodCases: { mood: PurrMood; emoji: string }[] = [
+    { mood: "happy", emoji: "😺" },
+    { mood: "grumpy", emoji: "😾" },
+    { mood: "sleepy", emoji: "😴" },
+    { mood: "chaotic", emoji: "🙀" },
+  ];
+
+  it.each(moodCases)(
+    "logs with the correct emoji for mood '%s'",
+    ({ mood, emoji }) => {
+      purrLog("Test message", { mood });
+      expect(spy).toHaveBeenCalledWith(`${emoji} Test message`);
+    }
+  );
+});

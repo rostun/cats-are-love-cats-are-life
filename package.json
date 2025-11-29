@@ -16,8 +16,7 @@
 		"build": "tsc",
 		"start": "node dist/index.js",
 		"dev": "yarn build && yarn start",
-		"test:purr": "yarn build && node dist/log/purr.test.js",
-		"test:all": "yarn build && node dist/**/**/*.test.js"
+		"test": "jest"
 	},
 	"keywords": [
 		"cat",
