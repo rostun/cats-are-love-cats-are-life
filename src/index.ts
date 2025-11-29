@@ -1,3 +1,3 @@
-export * from './log/purr.js';
-export * from './log/hiss.js';
+export * from './log/purr';
+export * from './log/hiss';
 export * from './cursor/kitty';
