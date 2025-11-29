@@ -1,6 +1,6 @@
 {
 	"name": "cats-are-love-cats-are-life",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A growing collection of cat-themed utilities for developers 😸 NYAN",
 	"type": "module",
 	"main": "dist/index.js",
