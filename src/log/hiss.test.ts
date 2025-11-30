@@ -1,13 +1,22 @@
 import { hissWarning } from './hiss';
 
 describe('hissWarning', () => {
-	it('logs a warning with the cat hiss emoji formatting', () => {
+	it('uses default annoyed mood when none is provided', () => {
 		const spy = jest.spyOn(console, 'warn').mockImplementation(() => {});
 
-		hissWarning('Back off!');
+		hissWarning('Uh oh');
 
-		// update expected formatting to match actual hissWarning implementation
-		expect(spy).toHaveBeenCalledWith('😾⚠️ Back off! ⚠️😾');
+		expect(spy).toHaveBeenCalledWith('😾 Uh oh 😾');
+
+		spy.mockRestore();
+	});
+
+	it('uses a custom mood when provided', () => {
+		const spy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+		hissWarning('Not great', { mood: 'judging' });
+
+		expect(spy).toHaveBeenCalledWith('😼 Not great 😼');
 
 		spy.mockRestore();
 	});
