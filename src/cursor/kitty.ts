@@ -13,8 +13,15 @@ export interface KittyPopOptions {
 	animation?: KittyAnimation;
 }
 
+type KittyPopTarget =
+	| MouseEvent
+	| {
+			clientX: number;
+			clientY: number;
+	  };
+
 export function kittyPop(
-	event: MouseEvent,
+	event: KittyPopTarget,
 	options: KittyPopOptions = {},
 ): void {
 	const {
