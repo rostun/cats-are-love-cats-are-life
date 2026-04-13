@@ -14,7 +14,10 @@
 		</style>
 	</head>
 	<body>
-		<h1>Click anywhere 😼</h1>
+		<main>
+			<h1>Kitty Playground</h1>
+			<div id="cat">🐈</div>
+		</main>
 
 		<script type="module">
 			import { enableKittyCursor } from './dist/cursor/kitty.js';
@@ -22,6 +25,25 @@
 			enableKittyCursor({
 				animation: 'parabola',
 			});
+		</script>
+
+		<script type="module">
+			import { kittyBurst } from './dist/interact/kittyBurst.js';
+
+			const cat = document.getElementById('cat');
+
+			if (cat) {
+				kittyBurst(cat, {
+					holdMs: 500,
+					burstCount: 10,
+					emoji: '🐈',
+					fragmentEmoji: '🐱',
+					size: '5rem',
+					fragmentSize: '1.5rem',
+					durationMs: 900,
+					respawn: false,
+				});
+			}
 		</script>
 	</body>
 </html>

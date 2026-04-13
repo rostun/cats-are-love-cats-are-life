@@ -68,7 +68,6 @@ yarn test
 ## Building the Project
 
 yarn build
-yarn start
 
 ## Playground Demo
 
